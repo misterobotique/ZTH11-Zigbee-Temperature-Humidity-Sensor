@@ -1,6 +1,6 @@
 # ZTH11-Zigbee-Temperature-Humidity-Sensor
 Here you will find the result of my reverse engineering of a cheap Zigbee temperature & humidity sensor PCB (marking: ZTH11-ZTY-V1.2, dated 2025-10-13).  
-![photo of Zigbee sensor](photos/sensor_and_package.jpg)  
+![photo of Zigbee sensor](Photos/sensor_and_package.jpg)  
 
 ---
 
@@ -32,14 +32,14 @@ Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB ad
 
 The humidity & temperature sensor communicates over I2C with U3, an unidentified IC.  
 The captured transaction sequence is documented in:  
-📄 [analysis/i2c_cht8310.pdf](analysis/i2c_cht8310.pdf)
+📄 [analysis/i2c_cht8310.pdf](Analysis/i2c_cht8310.pdf)
 
 ### UART — Unknown IC ↔ ZTU Module
 
 The ZTU module communicates with the same unidentified IC over UART.  
 Two captures are provided:  
-- 📄 [analysis/uart_ztu_idle.pdf](analysis/uart_ztu_idle.pdf) — transactions during normal standby (without pairing)
-- 📄 [analysis/uart_ztu_pairing.pdf](analysis/uart_ztu_pairing.pdf) — transactions including the full pairing sequence
+- 📄 [analysis/uart_ztu_idle.pdf](Analysis/uart_ztu_idle.pdf) — transactions during normal standby (without pairing)
+- 📄 [analysis/uart_ztu_pairing.pdf](Analysis/uart_ztu_pairing.pdf) — transactions including the full pairing sequence
 
 ## Tools & Equipment
 
