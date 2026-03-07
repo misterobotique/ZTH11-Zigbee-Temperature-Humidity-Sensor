@@ -28,6 +28,11 @@ Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB ad
 
 ---
 
+## Measurements
+Will upload measurement of the current consumption in the future.
+
+---
+
 ## Analysis
 
 ### I2C — Unknown IC ↔ CHT8310
