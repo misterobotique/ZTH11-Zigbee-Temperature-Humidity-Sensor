@@ -1,7 +1,11 @@
 | Designator | Description | Part Number |
 |------------|-------------|-------------|
+| C2 | Capacitor, 100nF | — |
+| C4 | Capacitor, 100nF | — |
 | C5 | Capacitor, 10µF | — |
+| C7 | Capacitor, 100nF | — |
 | C10 | Capacitor, 10µF | — |
+| C11 | Capacitor, 100nF | — |
 | C20 | Capacitor, 22µF | — |
 | D1 | White LED | — |
 | M1 | Zigbee module | ZTU |
