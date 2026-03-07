@@ -4,19 +4,19 @@ Here you will find the result of my reverse engineering of a cheap Zigbee temper
 
 ---
 
-## Schematic
-Schematic of the actual PCB, drawn from visual inspection. Connections confirmed using a multimeter in continuity mode.  
-KiCad project files and PDF.
-
-## Datasheets
-Datasheets for the main components, for reference.
-
 ## Photos
 Photos taken before and during disassembly:  
 ・Sensor and its package  
 ・PCB top side  
 ・PCB top side (U3 removed)  
 ・PCB bottom side
+
+## Datasheets
+Datasheets for the main components, for reference.
+
+## Schematic
+Schematic of the actual PCB, drawn from visual inspection. Connections confirmed using a multimeter in continuity mode.  
+KiCad project files and PDF.
 
 ## BOM
 Resistor values measured in-circuit. Capacitors were desoldered and measured out-of-circuit.
@@ -25,6 +25,8 @@ Resistor values measured in-circuit. Capacitors were desoldered and measured out
 Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB adapter and [TlsrComSwireWriter](https://github.com/pvvx/TlsrComSwireWriter).
 
 > ⚠️ The Zigbee Network Key originally found at address `0x000DC218` (16 bytes) has been replaced with a randomly generated sequence before publishing.
+
+---
 
 ## Analysis
 
@@ -40,6 +42,8 @@ The ZTU module communicates with the same unidentified IC over UART.
 Two captures are provided:  
 - 📄 [analysis/uart_ztu_idle.pdf](Analysis/uart_ztu_idle.pdf) — transactions during normal standby (without pairing)
 - 📄 [analysis/uart_ztu_pairing.pdf](Analysis/uart_ztu_pairing.pdf) — transactions including the full pairing sequence
+
+---
 
 ## Tools & Equipment
 
