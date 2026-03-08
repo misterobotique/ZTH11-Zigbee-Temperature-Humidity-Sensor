@@ -29,7 +29,17 @@ Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB ad
 ---
 
 ## Measurements
-Will upload measurement of the current consumption in the future.
+Power consumption recorded after successful pairing.
+
+| Phase | Current |
+|---|---|
+| Idle (standby) | 5.2 µA |
+| Sending data | 170.25 µA |
+
+Screenshots:  
+・Idle current (linear scale)  
+・Idle current (log scale)  
+・Current when sending data (log scale)
 
 ---
 
@@ -47,6 +57,21 @@ The ZTU module communicates with the same unidentified IC over UART.
 Two captures are provided:  
 - 📄 [analysis/uart_ztu_idle.pdf](Analysis/uart_ztu_idle.pdf) — transactions during normal standby (without pairing)
 - 📄 [analysis/uart_ztu_pairing.pdf](Analysis/uart_ztu_pairing.pdf) — transactions including the full pairing sequence
+
+---
+
+## Sensor Behavior
+
+### Data Reporting Interval
+
+**According to the manual:**  
+・If temperature changes by ≥ 0.5°C or humidity by ≥ 5%, data is updated every 2 minutes.  
+・If temperature changes by < 0.5°C or humidity by < 5%, data is updated once an hour.  
+
+**Observed in practice:**  
+・A report is sent immediately when either value changes by one step (0.5°C for temperature, 1% for humidity).  
+・The minimum inter-report interval appears to be around 2 minutes.  
+・When no value changes, a forced report is sent after approximately 1 hour.  
 
 ---
 
