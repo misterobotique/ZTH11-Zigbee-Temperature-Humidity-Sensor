@@ -21,6 +21,8 @@ KiCad project files and PDF.
 ## BOM
 Resistor values measured in-circuit. Capacitors were desoldered and measured out-of-circuit.
 
+## Firmware
+
 ### Original Firmware
 Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB adapter and [TlsrComSwireWriter](https://github.com/pvvx/TlsrComSwireWriter).
 > ⚠️ The Zigbee Network Key originally found at address `0x000DC218` (16 bytes) has been replaced with a randomly generated sequence before publishing.
