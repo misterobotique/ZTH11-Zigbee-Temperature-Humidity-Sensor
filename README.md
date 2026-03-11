@@ -21,10 +21,30 @@ KiCad project files and PDF.
 ## BOM
 Resistor values measured in-circuit. Capacitors were desoldered and measured out-of-circuit.
 
-## Firmware
+### Original Firmware
 Original firmware dumped from the ZTU module using a CH340G-based UART-to-USB adapter and [TlsrComSwireWriter](https://github.com/pvvx/TlsrComSwireWriter).
-
 > ⚠️ The Zigbee Network Key originally found at address `0x000DC218` (16 bytes) has been replaced with a randomly generated sequence before publishing.
+
+### Custom Firmware
+`ZTH01Z_v0135_CHT8310_patched.bin` is based on [pvvx/ZigbeeTLc](https://github.com/pvvx/ZigbeeTLc) ZTH01Z_v0135 with two bug fixes applied to `sensors.c` to enable CHT8310/CHT8315 sensor support:
+- Fix VID byte-swap: `CHT8215_VID 0x1582` → `0x8215`
+- Fix reset stabilization delay: `sleep_us(190)` → `sleep_us(1000)`
+
+See [ZigbeeTLc issue #272](https://github.com/pvvx/ZigbeeTLc/issues/272) for details.
+
+Flash using [USBCOMFlashTx](https://pvvx.github.io/ATC_MiThermometer/USBCOMFlashTx.html).
+
+Requires the following hardware modification:
+- Remove U3
+- Bridge pins 1 and 14 at U3 footprint to power the CHT8310
+- Connect ZTU module GPIOs as follows:
+
+| ZTU GPIO | Function |
+|----------|----------|
+| GPIO_PB4 | KEY |
+| GPIO_PB5 | LED |
+| GPIO_PC2 | SDA |
+| GPIO_PC3 | SCL |
 
 ---
 
