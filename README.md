@@ -48,6 +48,8 @@ Requires the following hardware modification:
 | GPIO_PC2 | SDA |
 | GPIO_PC3 | SCL |
 
+See [pcb_top_modif.jpg](Photos/pcb_top_modif.jpg) for a photo of the completed hardware modification.
+
 ---
 
 ## Measurements
